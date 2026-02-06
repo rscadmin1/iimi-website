@@ -1,4 +1,5 @@
 import Header from './components/Header';
+import HeroExperience from './components/HeroExperience';
 import ServiceGrid from './components/ServiceGrid';
 import ScatterHero from './components/ScatterHero';
 import EditorialFlow from './components/EditorialFlow';
@@ -21,22 +22,25 @@ function App() {
       {/* Fixed navigation */}
       <Header />
 
-      {/* Fixed left-side social links */}
+      {/* Fixed social/contact links */}
       <SocialLinks />
 
       {/* Main content flow */}
       <main id="main-content" className="app__main">
-        {/* Dense service grid (replaces ecbs scan gallery) */}
+        {/* Immersive hero with particle canvas and value prop */}
+        <HeroExperience />
+
+        {/* Service cards grid */}
         <ServiceGrid />
 
-        {/* Interactive scatter canvas (centerpiece) */}
+        {/* Interactive scatter section with tagline */}
         <ScatterHero />
 
         {/* Continuous editorial text + inline images */}
         <EditorialFlow />
       </main>
 
-      {/* Minimal footer */}
+      {/* Footer */}
       <Footer />
     </div>
   );
