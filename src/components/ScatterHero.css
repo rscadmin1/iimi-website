@@ -1,0 +1,111 @@
+.scatter-hero {
+  position: relative;
+  width: 100%;
+  min-height: 160vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Giant background watermark text */
+.scatter-hero__watermark {
+  position: absolute;
+  font-family: var(--font-family);
+  font-weight: 900;
+  color: var(--text-primary);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -6px;
+  line-height: 0.85;
+  z-index: 0;
+}
+
+.scatter-hero__blur-shape {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.scatter-hero__shape {
+  position: absolute;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+  transform: translate(-50%, -50%);
+}
+
+.scatter-hero__shape--behind {
+  z-index: 2;
+}
+
+.scatter-hero__shape--above {
+  z-index: 6;
+}
+
+.scatter-hero__shape:active {
+  cursor: grabbing;
+}
+
+.scatter-hero__text-fragment {
+  position: absolute;
+  font-family: var(--font-family);
+  font-weight: 700;
+  letter-spacing: 3px;
+  user-select: none;
+  touch-action: none;
+  white-space: nowrap;
+  z-index: 7;
+}
+
+.scatter-hero__text-fragment:active {
+  cursor: grabbing;
+}
+
+.scatter-hero__title-block {
+  position: relative;
+  z-index: 4;
+  padding: 40px;
+  pointer-events: none;
+  mix-blend-mode: normal;
+}
+
+.scatter-hero__title-line {
+  font-size: var(--fs-hero);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--text-primary);
+  letter-spacing: -1px;
+  white-space: nowrap;
+  text-shadow: 0 0 60px rgba(10, 22, 40, 0.8),
+               0 0 120px rgba(10, 22, 40, 0.5);
+}
+
+.scatter-hero__subtitle {
+  margin-top: 28px;
+  font-size: var(--fs-body-sm);
+  font-weight: 400;
+  color: var(--text-subtle);
+  letter-spacing: 2px;
+  text-shadow: 0 0 30px rgba(10, 22, 40, 0.9);
+}
+
+@media (max-width: 768px) {
+  .scatter-hero {
+    min-height: 120vh;
+  }
+
+  .scatter-hero__title-block {
+    padding: 24px;
+  }
+
+  .scatter-hero__title-line {
+    font-size: clamp(24px, 7vw, 38px);
+  }
+
+  .scatter-hero__watermark {
+    letter-spacing: -3px;
+  }
+}
